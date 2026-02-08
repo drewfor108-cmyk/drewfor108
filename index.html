@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drew Bingaman for PA - House District 108</title>
+    <meta name="description" content="Drew Bingaman for Pennsylvania House of Representatives District 108. Your Life, Your Way, Your PA.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1e4a7a;
+            --navy-light: #2a5a8a;
+            --red: #b91c1c;
+            --red-bright: #dc2626;
+            --white: #ffffff;
+            --text-light: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(185, 28, 28, 0.03) 48%, rgba(185, 28, 28, 0.03) 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(185, 28, 28, 0.03) 48%, rgba(185, 28, 28, 0.03) 52%, transparent 52%);
+            background-size: 60px 60px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(185, 28, 28, 0.15) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+            z-index: -1;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.15; }
+            50% { transform: scale(1.1) translate(-5%, 5%); opacity: 0.25; }
+        }
+        
+        .hero h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            line-height: 0.95;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero .name {
+            display: block;
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+        
+        .hero .name-first {
+            font-size: 1.8em;
+        }
+        
+        .hero .tagline {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 300;
+            margin: 1.5rem 0 2rem;
+            color: var(--text-light);
+            animation: slideUp 0.8s ease-out 0.2s backwards;
+        }
+        
+        .hero .district {
+            display: inline-block;
+            background: var(--red);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            animation: slideUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: slideUp 0.8s ease-out 0.6s backwards;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background: var(--red);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(185, 28, 28, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: var(--red-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(220, 38, 38, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .section-intro {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--navy-light);
+            border-radius: 1rem;
+            padding: 4rem 3rem;
+            margin: 0 2rem;
+        }
+        
+        .about p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .about strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        /* Platform Section */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .platform-item {
+            background: var(--navy-light);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--red);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .platform-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(185, 28, 28, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .platform-item:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--red-bright);
+        }
+        
+        .platform-item:hover::before {
+            opacity: 1;
+        }
+        
+        .platform-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .platform-item h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #60a5fa;
+            letter-spacing: -0.01em;
+        }
+        
+        .platform-item ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .platform-item li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .platform-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+            font-weight: bold;
+        }
+        
+        /* Core Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--navy-light) 0%, rgba(26, 42, 69, 0.5) 100%);
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .value-card h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #60a5fa;
+        }
+        
+        .value-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            background: var(--red);
+            padding: 5rem 2rem;
+            margin: 0 2rem;
+            border-radius: 1rem;
+        }
+        
+        .contact h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact p {
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .qr-code-container {
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .qr-code-container img {
+            width: 200px;
+            height: 200px;
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .qr-code-container p {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--white);
+            opacity: 0.9;
+        }
+        
+        .contact .btn-primary {
+            background: var(--white);
+            color: var(--navy);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact .btn-primary:hover {
+            background: var(--white);
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .contact .btn-secondary:hover {
+            background: var(--white);
+            color: var(--red);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--red-bright);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .about, .contact {
+                margin: 0 1rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .platform-grid, .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>
+            <span class="name">
+                <span class="name-first">Drew</span> Bingaman
+            </span>
+            <span>for PA</span>
+        </h1>
+        <p class="tagline">Your Life, Your Way, Your PA</p>
+        <div class="district">House District 108</div>
+        <div class="cta-buttons">
+            <a href="https://secure.actblue.com/donate/drew-bingaman-1" class="btn btn-primary" target="_blank">Donate Now</a>
+            <a href="#platform" class="btn btn-secondary">See My Platform</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in">
+        <h2>Power Belongs to the People</h2>
+        <p>The Pennsylvania Constitution makes clear that <strong>all power is inherent in the people</strong>. Government exists to protect liberty, not to intimidate, conceal, or control.</p>
+        <p>My campaign is grounded in defending the constitutional rights of every Pennsylvanian. I'm running to fight for transparency, individual freedom, and accountability in Harrisburg.</p>
+        <p><strong>I will fight loudly and proudly for the people of the 108th District</strong> — not party bosses, not corporations, and not entrenched power. I will always stand on the side of liberty, transparency, and the Pennsylvania Constitution.</p>
+    </section>
+
+    <!-- Platform Section -->
+    <section id="platform">
+        <h2>My Platform</h2>
+        <p class="section-intro">Real solutions for the issues that matter most to District 108.</p>
+        
+        <div class="platform-grid">
+            <div class="platform-item">
+                <span class="platform-icon">🛡</span>
+                <h3>Accountable Law Enforcement</h3>
+                <p>Government authority must be exercised openly and with accountability.</p>
+                <ul>
+                    <li>Ban masks on officers during public interactions</li>
+                    <li>Require body cameras for all law enforcement</li>
+                    <li>Guarantee free access to body camera footage</li>
+                    <li>Strengthen Official Oppression laws</li>
+                </ul>
+            </div>
+            
+            <div class="platform-item">
+                <span class="platform-icon">🌿</span>
+                <h3>Cannabis Legalization</h3>
+                <p>Adults shouldn't be criminalized for peaceful personal choices.</p>
+                <ul>
+                    <li>Legalize adult-use cannabis</li>
+                    <li>Prevent state monopolies on dispensaries</li>
+                    <li>Expunge possession convictions</li>
+                    <li>Protect gun rights for cannabis users</li>
+                    <li>Allow home cultivation</li>
+                </ul>
+            </div>
+            
+            <div class="platform-item">
+                <span class="platform-icon">🔐</span>
+                <h3>Privacy & Digital Rights</h3>
+                <p>Privacy is a cornerstone of liberty. Without privacy, freedom cannot exist.</p>
+                <ul>
+                    <li>You own your personal data</li>
+                    <li>Right to access and delete your data</li>
+                    <li>Ban warrantless surveillance</li>
+                    <li>Prohibit data used for intimidation</li>
+                </ul>
+            </div>
+            
+            <div class="platform-item">
+                <span class="platform-icon">🏛</span>
+                <h3>Open Government</h3>
+                <p>A free republic requires an informed and empowered public.</p>
+                <ul>
+                    <li>Strengthen Sunshine Laws</li>
+                    <li>Lower barriers to public records</li>
+                    <li>Require transparent spending disclosure</li>
+                    <li>Make government accessible to all</li>
+                </ul>
+            </div>
+            
+            <div class="platform-item">
+                <span class="platform-icon">🏭</span>
+                <h3>Economic Freedom</h3>
+                <p>The Commonwealth's strength comes from its people, not monopolies.</p>
+                <ul>
+                    <li>Oppose monopolistic practices</li>
+                    <li>Support small businesses and workers</li>
+                    <li>Resist corporate-written laws</li>
+                    <li>Put individuals over institutions</li>
+                </ul>
+            </div>
+            
+            <div class="platform-item">
+                <span class="platform-icon">🧠</span>
+                <h3>Free Expression</h3>
+                <p>Free people must be free to think, speak, create, and share.</p>
+                <ul>
+                    <li>Defend freedom of expression</li>
+                    <li>Oppose government censorship</li>
+                    <li>Support free exchange of ideas</li>
+                    <li>Encourage innovation without overregulation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section>
+        <h2>Core Principles</h2>
+        <p class="section-intro">The foundation of my campaign and my commitment to you.</p>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <span class="value-icon">👁️</span>
+                <h3>Transparency</h3>
+                <p>Government should work in the open, not behind closed doors</p>
+            </div>
+            
+            <div class="value-card">
+                <span class="value-icon">👥</span>
+                <h3>People First</h3>
+                <p>Families and communities come before corporations and special interests</p>
+            </div>
+            
+            <div class="value-card">
+                <span class="value-icon">🔒</span>
+                <h3>Privacy Is Freedom</h3>
+                <p>Your data, your rights, your choice</p>
+            </div>
+            
+            <div class="value-card">
+                <span class="value-icon">💡</span>
+                <h3>Open Culture</h3>
+                <p>Free people share ideas, and that's how we grow</p>
+            </div>
+            
+            <div class="value-card">
+                <span class="value-icon">🗽</span>
+                <h3>Your Liberty</h3>
+                <p>Government should not interfere in peaceful personal decisions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Action Section -->
+    <section class="contact">
+        <h2>Get Involved</h2>
+        <p>Join the movement to bring real change to District 108</p>
+        <div style="margin-bottom: 2rem;">
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+                <strong>📞 Phone:</strong> <a href="tel:5704151989" style="color: white; text-decoration: none;">(570) 415-1989</a>
+            </p>
+            <p style="font-size: 1.1rem;">
+                <strong>✉️ Email:</strong> <a href="/cdn-cgi/l/email-protection#e88c9a8d9f8e879ad9d8d0a88f85898184c68b8785" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="abcfd9cedccdc4d99a9b93ebccc6cac2c785c8c4c6">[email&#160;protected]</span></a>
+            </p>
+        </div>
+        <div class="contact-buttons">
+            <a href="https://secure.actblue.com/donate/drew-bingaman-1" class="btn btn-primary" target="_blank">Donate</a>
+            <a href="/cdn-cgi/l/email-protection#f397819684959c81c2c3cbb3949e929a9fdd909c9e" class="btn btn-secondary">Contact Campaign</a>
+        </div>
+        <div class="qr-code-container">
+            <img src="Act_Blue_Drew.png" alt="Donate via QR Code">
+            <p>Scan to donate</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Drew Bingaman for PA House District 108</strong></p>
+        <p>Your Life, Your Way, Your PA</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">PAID FOR BY CANDIDATE</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+          
