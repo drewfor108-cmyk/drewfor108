@@ -50,6 +50,26 @@
             z-index: -1;
             opacity: 0.5;
         }
+
+        /* Navigation */
+        nav {
+            background: var(--navy-light);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--red);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--red-bright);
+        }
         
         /* Hero Section */
         .hero {
@@ -423,6 +443,17 @@
         
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-right: 1rem;
+                margin-bottom: 0.5rem;
+                font-size: 0.9rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -466,6 +497,14 @@
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="#platform">Platform</a>
+        <a href="https://secure.actblue.com/donate/drew-bingaman-1" target="_blank">Donate</a>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
         <h1>
@@ -618,7 +657,7 @@
                 <strong>📞 Phone:</strong> <a href="tel:5704151989" style="color: white; text-decoration: none;">(570) 415-1989</a>
             </p>
             <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <strong>✉️ Email:</strong> <a href="mailto:drewfor108@gmail.com" style="color: white; text-decoration: none;">drewfor108@gmail.com</a>
+                <strong>✉️ Email:</strong> <a href="/cdn-cgi/l/email-protection#a7c3d5c2d0c1c8d596979fe7c0cac6cecb89c4c8ca" style="color: white; text-decoration: none;"><span class="__cf_email__" data-cfemail="d8bcaabdafbeb7aae9e8e098bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span></a>
             </p>
             <p style="font-size: 1.1rem;">
                 <strong>📘 Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61581510223973" target="_blank" style="color: white; text-decoration: none;">Follow the Campaign</a>
@@ -626,7 +665,7 @@
         </div>
         <div class="contact-buttons">
             <a href="https://secure.actblue.com/donate/drew-bingaman-1" class="btn btn-primary" target="_blank">Donate</a>
-            <a href="mailto:drewfor108@gmail.com" class="btn btn-secondary">Contact Campaign</a>
+            <a href="/cdn-cgi/l/email-protection#d2b6a0b7a5b4bda0e3e2ea92b5bfb3bbbefcb1bdbf" class="btn btn-secondary">Contact Campaign</a>
         </div>
         <div class="qr-code-container">
             <img src="Act_Blue_Drew.png" alt="Donate via QR Code">
@@ -641,16 +680,9 @@
         <p style="margin-top: 1.5rem; font-size: 0.9rem;">PAID FOR BY CANDIDATE</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            
+     
