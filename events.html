@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Drew Bingaman for PA House District 108</title>
+    <meta name="description" content="Upcoming campaign events for Drew Bingaman - PA House District 108">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1e4a7a;
+            --navy-light: #2a5a8a;
+            --red: #b91c1c;
+            --red-bright: #dc2626;
+            --white: #ffffff;
+            --text-light: #cbd5e1;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(185, 28, 28, 0.03) 48%, rgba(185, 28, 28, 0.03) 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(185, 28, 28, 0.03) 48%, rgba(185, 28, 28, 0.03) 52%, transparent 52%);
+            background-size: 60px 60px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--navy-light);
+            padding: 1rem 2rem;
+            border-bottom: 2px solid var(--red);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-right: 2rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--red-bright);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+        }
+
+        /* Events Container */
+        .events-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            font-size: 1.25rem;
+            color: var(--text-light);
+        }
+
+        .no-events {
+            text-align: center;
+            padding: 3rem;
+            background: var(--navy-light);
+            border-radius: 1rem;
+            margin: 2rem;
+        }
+
+        .no-events h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .event-card {
+            background: var(--navy-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 6px solid var(--red);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-date-box {
+            background: var(--red);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .event-date-box .month {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .event-date-box .day {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .event-time {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .event-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 1.75rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .event-location {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        .add-to-calendar {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--red);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-calendar:hover {
+            background: var(--red-bright);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--red-bright);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin-right: 1rem;
+                margin-bottom: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .event-date {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .event-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#platform">Platform</a>
+        <a href="events.html">Events</a>
+        <a href="https://forms.gle/41TgrmfoEq3uop7M8" target="_blank">Volunteer</a>
+        <a href="https://secure.actblue.com/donate/drew-bingaman-1" target="_blank">Donate</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Upcoming Events</h1>
+        <p>Join us on the campaign trail!</p>
+    </section>
+
+    <!-- Events Container -->
+    <div class="events-container">
+        <div id="events-list" class="loading">Loading events...</div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Drew Bingaman for PA House District 108</strong></p>
+        <p>📞 (570) 415-1989 | ✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91f5e3f4e6f7fee3a0a1a9d1f6fcf0f8fdbff2fefc">[email&#160;protected]</a> | 🌐 drewfor108.com</p>
+        <p style="margin-top: 1rem;">PAID FOR BY CANDIDATE</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Google Calendar API configuration
+        const CALENDAR_ID = 'drewfor108@gmail.com';
+        const API_KEY = 'AIzaSyDlBiYozlp8Mi5desQ53t58lCj_v2pJtYY';
+        
+        // Function to format date
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return {
+                month: months[date.getMonth()],
+                day: date.getDate(),
+                year: date.getFullYear()
+            };
+        }
+
+        // Function to format time
+        function formatTime(dateString) {
+            const date = new Date(dateString);
+            let hours = date.getHours();
+            const minutes = date.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+            return `${hours}:${minutesStr} ${ampm}`;
+        }
+
+        // Fetch events from Google Calendar
+        async function fetchEvents() {
+            const now = new Date().toISOString();
+            const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&maxResults=20&singleEvents=true&orderBy=startTime`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.error) {
+                    console.error('Calendar API Error:', data.error);
+                    displayError();
+                    return;
+                }
+                
+                displayEvents(data.items || []);
+            } catch (error) {
+                console.error('Error fetching events:', error);
+                displayError();
+            }
+        }
+
+        // Display events
+        function displayEvents(events) {
+            const container = document.getElementById('events-list');
+            
+            if (!events || events.length === 0) {
+                container.innerHTML = `
+                    <div class="no-events">
+                        <h2>No Upcoming Events</h2>
+                        <p>Check back soon for upcoming campaign events!</p>
+                        <p style="margin-top: 1rem;">Want to help organize an event? <a href="mailto:drewfor108@gmail.com" style="color: #60a5fa;">Contact us!</a></p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = events.map(event => {
+                const start = event.start.dateTime || event.start.date;
+                const end = event.end.dateTime || event.end.date;
+                const dateInfo = formatDate(start);
+                const isAllDay = !event.start.dateTime;
+                
+                return `
+                    <div class="event-card">
+                        <div class="event-date">
+                            <div class="event-date-box">
+                                <div class="month">${dateInfo.month}</div>
+                                <div class="day">${dateInfo.day}</div>
+                            </div>
+                            <div class="event-time">
+                                ${isAllDay ? 'All Day' : `${formatTime(start)} - ${formatTime(end)}`}
+                            </div>
+                        </div>
+                        <h2 class="event-title">${event.summary || 'Campaign Event'}</h2>
+                        ${event.location ? `
+                            <div class="event-location">
+                                📍 ${event.location}
+                            </div>
+                        ` : ''}
+                        ${event.description ? `
+                            <div class="event-description">${event.description.replace(/\n/g, '<br>')}</div>
+                        ` : ''}
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(event.summary || 'Campaign Event')}&dates=${start.replace(/[-:]/g, '')}/${end.replace(/[-:]/g, '')}${event.location ? '&location=' + encodeURIComponent(event.location) : ''}" 
+                           class="add-to-calendar" 
+                           target="_blank">
+                            Add to Calendar
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Display error message
+        function displayError() {
+            const container = document.getElementById('events-list');
+            container.innerHTML = `
+                <div class="no-events">
+                    <h2>Unable to Load Events</h2>
+                    <p>Please check back later or contact us directly:</p>
+          
