@@ -307,13 +307,30 @@
             const now = new Date().toISOString();
             const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?key=${API_KEY}&timeMin=${now}&maxResults=20&singleEvents=true&orderBy=startTime`;
             
+            console.log('Fetching from URL:', url);
+            
             try {
                 const response = await fetch(url);
                 const data = await response.json();
                 
+                console.log('API Response:', data);
+                
                 if (data.error) {
                     console.error('Calendar API Error:', data.error);
-                    displayError();
+                    const container = document.getElementById('events-list');
+                    container.innerHTML = `
+                        <div class="no-events">
+                            <h2>Calendar Configuration Issue</h2>
+                            <p><strong>Error:</strong> ${data.error.message}</p>
+                            <p style="margin-top: 1rem;">This usually means:</p>
+                            <ul style="text-align: left; max-width: 600px; margin: 1rem auto; line-height: 2;">
+                                <li>The calendar needs to be set to public in Google Calendar settings</li>
+                                <li>The API key needs the Google Calendar API enabled</li>
+                                <li>The API key may need website restrictions updated</li>
+                            </ul>
+                            <p style="margin-top: 1rem;">📞 (570) 415-1989 | ✉ drewfor108@gmail.com</p>
+                        </div>
+                    `;
                     return;
                 }
                 
@@ -382,4 +399,13 @@
                 <div class="no-events">
                     <h2>Unable to Load Events</h2>
                     <p>Please check back later or contact us directly:</p>
-          
+                    <p style="margin-top: 1rem;">📞 (570) 415-1989 | ✉ drewfor108@gmail.com</p>
+                </div>
+            `;
+        }
+
+        // Load events when page loads
+        fetchEvents();
+    </script>
+</body>
+</html>
