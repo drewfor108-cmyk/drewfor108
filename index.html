@@ -373,7 +373,26 @@
             flex-wrap: wrap;
         }
         
-
+        .qr-code-container {
+            margin: 2rem auto;
+            text-align: center;
+        }
+        
+        .qr-code-container img {
+            width: 200px;
+            height: 200px;
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .qr-code-container p {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--white);
+            opacity: 0.9;
+        }
         
         .contact .btn-primary {
             background: var(--white);
@@ -485,7 +504,7 @@
         <a href="#platform">Platform</a>
         <a href="events.html">Events</a>
         <a href="https://forms.gle/41TgrmfoEq3uop7M8" target="_blank">Volunteer</a>
-
+        <a href="https://www.zeffy.com/en-US/donation-form/donate-to-the-drew-bingaman-campaign" target="_blank">Donate</a>
     </nav>
 
     <!-- Hero Section -->
@@ -499,6 +518,7 @@
         <p class="tagline">Your Life, Your Way, Your PA</p>
         <div class="district">House District 108</div>
         <div class="cta-buttons">
+            <a href="https://www.zeffy.com/en-US/donation-form/donate-to-the-drew-bingaman-campaign" class="btn btn-primary" target="_blank">Donate Now</a>
             <a href="#platform" class="btn btn-secondary">See My Platform</a>
         </div>
     </section>
@@ -646,21 +666,20 @@
             </p>
         </div>
         <div class="contact-buttons">
-
             <a href="mailto:drewfor108@gmail.com" class="btn btn-secondary">Contact Campaign</a>
         </div>
-
+        <div class="qr-code-container">
+             <img src="drew_zeffy.png" alt="Donate via QR Code">
 <!-- Footer -->
     <footer>
         <p><strong>Drew Bingaman for PA House District 108</strong></p>
         <p>📞 (570) 415-1989 | ✉ <a href="mailto:drewfor108@gmail.com" style="color: white; text-decoration: none;">drewfor108@gmail.com</a> | 🌐 drewfor108.com</p>
         <p style="margin-top: 1rem;">PAID FOR BY CANDIDATE</p>
     </footer>
-            
+            <p>Scan to donate</p>
         </div>
     </section>
 
-    <script>
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
